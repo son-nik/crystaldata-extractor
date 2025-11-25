@@ -1,6 +1,5 @@
 package org.github.son_nik.crystaldata.view;
 
-import org.github.son_nik.crystaldata.controller.MainController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,8 +52,7 @@ public class MainFrame extends JFrame {
         menuFileSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK));
 
         menuFileSettings = new JMenuItem("Settings");
-        menuFileSettings.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Coming soon"));
+
 
         menuHelp = new JMenu("Help");
         menuHelp.setMnemonic(KeyEvent.VK_H);
@@ -135,5 +133,9 @@ public class MainFrame extends JFrame {
 
     public void setStatusText(String status) {
         statusLabel.setText(" " + status);
+    }
+
+    public void setSettingsButtonListener(ActionListener listener) {
+        menuFileSettings.addActionListener(listener);
     }
 }
